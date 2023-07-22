@@ -14,6 +14,10 @@ def read_text_files():
     songs_id.sort()
     return songs_id
 
+def read_songs_file():
+    with open('songs.txt', 'r') as file:
+        return file.readlines()
+
 
 def create_songs_file():
     song_file_path = os.path.join(os.getcwd(), 'songs.txt')

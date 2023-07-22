@@ -17,8 +17,8 @@ def map_downloader():
     print("Starting the process.\n")
     # file fetching location
 
-    songs_id = utils.read_text_files()
-    if songs_id == []:
+    songs_id = utils.read_songs_file()
+    if not songs_id:
         print("Couldn't read the file or the file is empty.")
         return 0
 

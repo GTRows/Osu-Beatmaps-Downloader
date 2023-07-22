@@ -26,6 +26,13 @@ You can install Selenium WebDriver using pip:
 
 - pip install selenium
 
+For Chromedriver:
+
+1. Visit the [Chromedriver download page](https://sites.google.com/chromium.org/driver/) and download the version that corresponds to your installed Chrome version.
+2. Extract the executable from the downloaded file.
+3. Place the executable in the root of the project directory (same location as your main script).
+
+
 ### Running the project
 
 To run the project, you first need to clone it from the GitHub repository.

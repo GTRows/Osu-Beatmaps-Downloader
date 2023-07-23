@@ -28,14 +28,10 @@ def map_downloader():
         browser.get(f"https://osu.ppy.sh/beatmapsets/{i}")
         wait()
         try:
-            print(f"Downloading: {i}")
             download_buttons = browser.find_elements(By.CSS_SELECTOR, ".btn-osu-big.btn-osu-big--beatmapset-header")
-            print("download button: ", download_buttons)
             download_button = download_buttons[0]
             download_button.click()
-            print(f"Downloaded: {i}")
         except Exception as e:
-            print(f"Couldn't download: {i} - {e}")
             failed_list.append(i)
         wait()
     if failed_list:

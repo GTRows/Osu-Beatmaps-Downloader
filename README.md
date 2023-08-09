@@ -41,7 +41,7 @@ To run the project, you first need to clone it from the GitHub repository.
 
 Then navigate to the project directory:
 
-- cd yourrepository
+- cd OsuBeatMapsDownloader
 
 Now, you can run the script:
 

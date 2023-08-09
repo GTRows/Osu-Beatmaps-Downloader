@@ -1,5 +1,11 @@
 import os
 import time
+import re
+
+
+def extract_leading_number(s):
+    match = re.match(r'(\d+)', s)
+    return match.group(1) if match else None
 
 
 def read_text_files():
@@ -8,7 +14,8 @@ def read_text_files():
     if not os.path.exists(path):
         os.makedirs(path)
         print("Created directory '{}'".format(path))
-        return []
+        print("Please add the songs you want to download this directory. (songs.txt)")
+        exit(0)
     text_files = [file for file in os.listdir(path) if file.endswith('.txt')]
     text_files.sort()
     songs_id = []
@@ -22,8 +29,18 @@ def read_text_files():
 
 
 def read_songs_file():
-    with open('songs.txt', 'r') as file:
-        return file.readlines()
+    try:
+        with open('songs.txt', 'r') as file:
+            if not file.readlines():
+                print("File is empty, please add the songs you want to download to the songs.txt file.")
+                exit(0)
+            return file.readlines()
+    except FileNotFoundError as _:
+        print("File not found, creating a new one.")
+        print("Please add the songs you want to download to the songs.txt file.")
+        with open('songs.txt', 'w') as _:
+            pass
+        exit(0)
 
 
 def create_songs_file():

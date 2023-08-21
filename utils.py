@@ -31,10 +31,11 @@ def read_text_files():
 def read_songs_file():
     try:
         with open('songs.txt', 'r') as file:
-            if not file.readlines():
+            content = file.readlines()
+            if not content:
                 print("File is empty, please add the songs you want to download to the songs.txt file.")
                 exit(0)
-            return file.readlines()
+            return content
     except FileNotFoundError as _:
         print("File not found, creating a new one.")
         print("Please add the songs you want to download to the songs.txt file.")

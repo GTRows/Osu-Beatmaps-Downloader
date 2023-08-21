@@ -27,7 +27,7 @@ def map_downloader():
     failed_list = list()
 
     for i in songs_id:
-        browser.get(f"https://osu.ppy.sh/beatmapsets/{i}")
+        browser.get(f"https://osu.ppy.sh/beatmapsets/{i.split()[0]}")
         wait()
         try:
             download_buttons = browser.find_elements(By.CSS_SELECTOR, ".btn-osu-big.btn-osu-big--beatmapset-header")
